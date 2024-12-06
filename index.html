@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kółko i Krzyżyk</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="icon" sizes="16x16" href="./shortcut-icon.png">
+
+</head>
+<body>
+    
+    <div class="gameBoard">
+        <button class="btn" id="1" data-value=""></button>
+        <div class="verticalLine topEnd"></div>
+        <button class="btn" id="2" data-value=""></button>
+        <div class="verticalLine topEnd"></div>
+        <button class="btn" id="3" data-value=""></button>
+        <div class="horizontalLine"></div>
+        <button class="btn" id="4" data-value=""></button>
+        <div class="verticalLine"></div>
+        <button class="btn"id="5" data-value=""></button>
+        <div class="verticalLine"></div>
+        <button class="btn"id="6" data-value=""></button>
+        <div class="horizontalLine"></div>
+        <button class="btn" id="7" data-value=""></button>
+        <div class="verticalLine bottomEnd"></div>
+        <button class="btn" id="8" data-value=""></button>
+        <div class="verticalLine bottomEnd"></div>
+        <button class="btn" id="9" data-value=""></button>
+        <div class="winLine"></div>
+    </div>
+
+    <div class="stats statsPlayer1"></div>
+    <div class="stats statsPlayer2"></div>
+
+    <div class="info"></div>
+
+    <div class="playerInterface player1">
+
+        <div class="userSvg"></div>
+        
+        <div class="userName">
+
+            <input type="text" disabled value="" class="userInput" id="player1Name" maxlength="10">
+
+            <div class="edit" title="Zmień nazwę" id="editPlayer1"></div>
+
+        </div>
+    </div>
+    
+    <div class="playerInterface player2">
+
+        <div class="userSvg"></div>
+                    
+            <div class="userName userName2">
+
+                <input type="text" disabled value="" class="userInput" id="player2Name" maxlength="10">
+
+                <div class="edit" title="Zmień nazwę" id="editPlayer2"></div>
+
+            </div>
+    </div>
+
+
+    <script src="./js/index.js" type="module"></script>
+
+</body>
+</html>

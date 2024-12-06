@@ -1,0 +1,293 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html
+{
+    font-size:1vw;
+}
+body
+{
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0C6478, #15919B);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+.gameBoard
+{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr .5vw 1fr .5vw 1fr;
+    grid-template-rows: 1fr .5vw 1fr .5vw 1fr;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 2rem;
+    position: relative;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .5s ease;
+}
+.btn
+{
+    width:100%;
+    height: 100%;
+    background:none;
+    border:0;
+    outline: none;
+}
+.verticalLine
+{
+    width:100%;
+    height: 100%;
+    background-color: black;
+}
+.horizontalLine
+{
+    width:100%;
+    height: 100%;
+    background-color: black;
+    grid-column: 1/6;
+    border-radius: 50px;
+}
+.topEnd
+{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.bottomEnd
+{
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.playerInterface
+{
+    position: fixed;
+    top:2rem;
+    width: max-content;
+    padding: 0 0rem;
+    display: flex;
+    gap:.8rem;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: all .5s ease;
+}
+.player1
+{
+    left:1rem;
+}
+.player2
+{
+    right: 1rem;
+    flex-direction: row-reverse;
+}
+.userName2>input
+{
+    text-align: end;
+}
+.userName2>input:focus
+{
+    text-align: center;
+}
+.userSvg
+{
+    width:4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.userName
+{
+    font-size: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.userInput
+{
+    font-size: 2.5rem;
+    height: 3.5rem;
+    background: none;
+    color: rgb(215, 215, 215) !important;
+    outline: none;
+    border: 0;
+    width:9.5rem;
+    border-bottom: .3rem solid rgba(116, 116, 116, 0);
+    transition: all .5s ease;
+    min-width: 5vw !important;
+}
+.edit
+{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.editSvg
+{
+    fill: rgb(175, 175, 175);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.editSvg:hover
+{
+    fill: rgb(220, 220, 220) !important;
+}
+.inputFocused
+{
+    border-bottom: .3rem solid #213A58;
+    width:20rem !important;
+    text-align: center;
+}
+.info
+{
+    position: absolute;
+    bottom: 4rem;
+    left:50%;
+    translate: -50% 0%;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    transition: all .5s ease;
+
+    opacity: 0;
+    transition: all .5s ease;
+    color: white;
+}
+.infoWon
+{
+    color: rgb(255, 242, 0);
+}
+.okSvg
+{
+    fill: rgb(200, 200, 200);
+    transition: all .3s ease;
+    cursor: pointer;
+}
+.okSvg:hover
+{
+    fill: #80EE98;
+}
+.winLine
+{
+    position: absolute;
+    translate: 0 -50%;
+    width:100%;
+    height: .5rem;
+    border-radius: 20px;
+    background-color: rgb(254, 41, 41);
+    display: none;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+.stats
+{
+    width:12rem;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem .5rem;
+}
+.statsPlayer1
+{
+    top: 7rem;
+    left:1rem;
+}
+.statsPlayer2
+{
+    top: 7rem;
+    right: 1rem;
+    flex-direction: row-reverse;
+}
+.opacityClass
+{
+    opacity: 1;
+}
+.scaleClass
+{
+    transform: scale(1);
+    opacity: 1;
+}
+.statsSVG
+{
+    width:2.5rem;
+    height: 2.5rem;
+}
+@media (max-width:1200px) {
+    .gameBoard
+    {
+        width: 50vw;
+        height: 50vw;
+        grid-template-columns: 1fr 1vw 1fr 1vw 1fr;
+        grid-template-rows: 1fr 1vw 1fr 1vw 1fr;
+    }
+    html
+    {
+        font-size: 1.5vw;
+    }
+}
+@media (max-width:600px) {
+    .gameBoard
+    {
+        width: 90vw;
+        height: 90vw;
+        max-height: 50% !important;
+        grid-template-columns: 1fr 1.5vw 1fr 1.5vw 1fr;
+        grid-template-rows: 1fr 1.5vw 1fr 1.5vw 1fr;
+    }
+    html
+    {
+        font-size: 3vw;
+    }
+    .info
+    {
+        font-size: 4rem;
+        bottom: 2rem;
+    }
+    .playerInterface
+    {
+        flex-direction: column;
+    }
+    .userInput
+    {
+        border-bottom: .5rem solid rgba(116, 116, 116, 0);
+    }
+    .inputFocused
+    {
+        border-bottom: .5rem solid #213A58;
+        width:15rem !important;
+        text-align: center;
+    }
+    .statsPlayer1
+    {
+        top:10rem;
+    }
+    .statsPlayer2
+    {
+        top:10rem;
+    }
+    .statsSVG
+    {
+        width:1.5rem;
+        height: 1.5rem;
+    }
+    .stats
+    {
+        width:10rem;
+        gap:0rem .2rem;
+    }
+}
